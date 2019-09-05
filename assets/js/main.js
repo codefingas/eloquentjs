@@ -26,6 +26,46 @@ function phi(table) {// function that computes the φ coefficient from an array
 };
 
 
-function tableFor(event, journal) {//
+function tableFor(event, journal) {//function for creating tables for a particula event in relation to squirrel
+    let table = [0, 0, 0, 0];//creating a varible for table
 
+    for (let i = 0; i < journal.length; i++) {
+        let entry = journal[i], index = 0;
+
+        if(entry.events.includes(event)) {//if a particular entry has an event, increase index by 1
+            index += 1;
+        };
+
+        if (entry.squirrel) {//checking if the squirrel is true
+            index += 2;
+        };
+
+        table[index] += 1;
+    };
+
+};
+
+// console.log(tableFor("pizza", journal));//logging the table for pizza event to the console
+
+function alternateTableFor(event, journal) {//alternate function for tableFor
+    let table = [0, 0, 0, 0];
+
+   for (let entry of journal) {
+       let index = 0;
+
+        if(entry.events.includes(event)) {
+            index += 1;
+        }
+
+        if (entry.squirrel) {
+            index += 2;
+        }
+
+        table[index] += 1;
+   }
+
+   return table;
 }
+
+
+/**the FINAL ANALYSIS */
