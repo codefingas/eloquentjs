@@ -1,4 +1,4 @@
-/*let journal = [
+let journal = [
     {events: ["work", "touched tree", "pizza",
     "running", "television"],
     squirrel: false},
@@ -8,13 +8,13 @@
     {events: ["weekend", "cycling", "break", "peanuts",
     "beer"],
     squirrel: true},
-];*/
+];
 
 /*addEntry(["work", "touched tree", "pizza", "running","television"], false);
 addEntry(["work", "ice cream", "cauliflower", "lasagna","touched tree", "brushed teeth"], false);
 addEntry(["weekend", "cycling", "break", "peanuts","beer"], true);*/
 
-let journal = [];
+// let journal = [];
 
 function addEntry(events, squirrel) {//function for pushing elements into Journal
     journal.push({events, squirrel});
@@ -69,3 +69,20 @@ function alternateTableFor(event, journal) {//alternate function for tableFor
 
 
 /**the FINAL ANALYSIS */
+
+function journalEvents(journal) {
+    let events = [];
+
+    for (let entry of journal) {//lopping through each record in the journal
+        for (let event of entry.events) {//looping through  the event for each record in the Journal
+                if(!events.includes(event)){//checking if the events array already has the event
+                    events.push(event);
+                }
+        }
+    }
+    return events;
+}
+
+journalEvents(journal);
+
+/**END OF THE FINAL ANALYSIS FUNCTION */
