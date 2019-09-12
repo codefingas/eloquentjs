@@ -26,7 +26,7 @@ function phi(table) {// function that computes the φ coefficient from an array
 };
 
 
-function tableFor(event, journal) {//function for creating tables for a particula event in relation to squirrel
+function tableFor(event, journal) {//function for creating tables for a particular event in relation to squirrel
     let table = [0, 0, 0, 0];//creating a varible for table
 
     for (let i = 0; i < journal.length; i++) {
@@ -76,13 +76,30 @@ function journalEvents(journal) {
     for (let entry of journal) {//lopping through each record in the journal
         for (let event of entry.events) {//looping through  the event for each record in the Journal
                 if(!events.includes(event)){//checking if the events array already has the event
-                    events.push(event);
+                    events.push(event);//puhing events to array
                 }
         }
     }
     return events;
 }
 
-journalEvents(journal);
+
+for (let event of journalEvents(journal)) {//looping through all the events registered in the journal events
+        console.log(event + ":", phi(tableFor(event, journal)));//logging each event and their 
+}
+
+for (let event of journalEvents(journal)) {//looping through all the event and logging the ones with the most and least likely occurances to the console
+    let correlation = phi(tableFor(event, journal));//creating a variable for the results of the phi
+
+    if (correlation > 0.1 || correlation < -0.1) {
+        console.log(event + ":", correlation);
+    }
+};
+
+for (let entry of journal) {
+    if (entry.events.includes("peanuts") && !entry.events.includes("brushed teeth")) {//checking when peanuts and brushed teeth did not occur at all
+
+    }
+}
 
 /**END OF THE FINAL ANALYSIS FUNCTION */
