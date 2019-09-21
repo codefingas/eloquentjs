@@ -1,14 +1,27 @@
-function range(start, end) {
+function range(start, end, step) {
     let arr = [], i;
 
-    for (i = start; i <= end; i++){
-        arr.push(i);
-    };
+    if (step == undefined) {
+        step = 1;
+        for (i = start; i <= end; i += step){
+            arr.push(i);
+        };
+    
+    } else if (step < 0) {
+        for (i = start; i <= end; i += Math.abs(step)){
+            arr.shift(i);
+        };
+    } else if (step > 0) {
+        for (i = start; i <= end; i += step){
+            arr.push(i);
+        };
+    }
 
     return arr;
 };
 
-console.log(range(1, 10));
+console.log(range(1, 10, 2));
+console.log(range(1, 10, -2));
 
 function sum(...array) {
     let sum = 0;
