@@ -1,4 +1,4 @@
-function range(start, end, step) {
+/*function range(start, end, step) {
     let arr = [], i;
 
     if (step == undefined) {
@@ -46,3 +46,17 @@ function add(array) {
 }
 
 console.log(add(range(1, 10)));
+*/
+
+
+/**function for reversing array */
+function reverseArray(arr) {
+    let reversedArray = [], 
+        i = arr.length;
+
+    while(i--){
+        reversedArray.push(i);
+    }
+
+    return reversedArray;
+}
