@@ -16,7 +16,7 @@ addEntry(["work", "ice cream", "cauliflower", "lasagna","touched tree", "brushed
 addEntry(["weekend", "cycling", "break", "peanuts","beer"], true);*/
 
 // let journal = [];
-
+/*
 function addEntry(events, squirrel) {//function for pushing elements into Journal
     journal.push({events, squirrel});
 };
@@ -26,7 +26,7 @@ function phi(table) {// function that computes the φ coefficient from an array
             table[2] + table[3] * table[0] + table[1] * table[1] + table[3] * table[0] + table[2]);
 };
 
-
+/*
 function tableFor(event, journal) {//function for creating tables for a particular event in relation to squirrel
     let table = [0, 0, 0, 0];//creating a varible for table
 
@@ -47,7 +47,7 @@ function tableFor(event, journal) {//function for creating tables for a particul
 };
 
 // console.log(tableFor("pizza", journal));//logging the table for pizza event to the console
-
+/*
 function alternateTableFor(event, journal) {//alternate function for tableFor
     let table = [0, 0, 0, 0];
 
@@ -67,10 +67,10 @@ function alternateTableFor(event, journal) {//alternate function for tableFor
 
    return table;
 }
-
+*/
 
 /**the FINAL ANALYSIS */
-
+/*
 function journalEvents(journal) {
     let events = [];
 
@@ -103,10 +103,8 @@ for (let entry of journal) {
 
     }
 }
-
-/**END OF THE FINAL ANALYSIS FUNCTION */
-
 */
+/**END OF THE FINAL ANALYSIS FUNCTION */
 
 let arrayToListarray = [0, 1, 2, 3, 4];
 
