@@ -1,3 +1,4 @@
+/*
 let journal = [
     {events: ["work", "touched tree", "pizza",
     "running", "television"],
@@ -85,6 +86,7 @@ function journalEvents(journal) {
 
 
 for (let event of journalEvents(journal)) {//looping through all the events registered in the journal events
+    //activate
         console.log(event + ":", phi(tableFor(event, journal)));//logging each event and their 
 }
 
@@ -103,3 +105,20 @@ for (let entry of journal) {
 }
 
 /**END OF THE FINAL ANALYSIS FUNCTION */
+
+*/
+
+let arrayToListarray = [0, 1, 2, 3, 4];
+
+function arrayToList(array) {
+    let length = array.length, i,
+        obj = {value, list};
+        console.log(obj);
+
+    for(i = 0; i < length; i++) {
+        obj.value = array[i];
+        list = obj;
+    }
+};
+
+arrayToList(array);

@@ -50,7 +50,7 @@ console.log(add(range(1, 10)));
 
 
 /**function for reversing array */
-function reverseArray(arr) {
+function reverseArray(arr) {//function takes in an array and prints it out reversed
     let reversedArray = [], 
         i = arr.length;
 
@@ -59,4 +59,7 @@ function reverseArray(arr) {
     }
 
     return reversedArray;
-}
+};
+/**end of reversing array function */
+
+/** */
