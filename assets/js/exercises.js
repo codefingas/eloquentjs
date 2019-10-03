@@ -61,5 +61,5 @@ function reverseArray(arr) {//function takes in an array and prints it out rever
     return reversedArray;
 };
 /**end of reversing array function */
-
+let arr = [1, 2, 3, 4, 5];
 /** */

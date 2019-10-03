@@ -110,13 +110,16 @@ let arrayToListarray = [0, 1, 2, 3, 4];
 
 function arrayToList(array) {
     let length = array.length, i,
-        obj = {value, list};
+        list = null,
+        obj = {value : undefined, rest : list};
         console.log(obj);
 
-    for(i = 0; i < length; i++) {
-        obj.value = array[i];
+    while(length--) {
+        obj.list = obj;
+        obj.value = array[length];
         list = obj;
     }
+    console.log(obj);
 };
 
-arrayToList(array);
+arrayToList(arrayToListarray);
