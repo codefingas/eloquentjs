@@ -67,15 +67,3 @@ function reverseArray(arr) {//function takes in an array and prints it out rever
 //     console.log(element);
 // });
 /** */
-
-/**Reduce twice function on Arrays */
-let SCRIPT = {
-        name: "Coptic",
-        ranges: [[994, 1008], [11392, 11508], [11513, 11520]],
-        direction: "ltr",
-        year: -200,
-        living: false,
-        link: "https://en.wikipedia.org/wiki/Coptic_alphabet"
-    };
-    
-/**end of reduce twice function on Arrays */
