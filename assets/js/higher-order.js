@@ -20,14 +20,11 @@ function textScripts(text) {
  /***HIGHER ORDER FUNCTION : EXCERCISE ONE  funcion that flattens an array in array */
     function flatten (array) {
         return array.reduce((a , b) => {
-            a.concat(b), []
+            return a.concat(b);
         });
     }
 
     let arr =  [[1,2], [3, 4], [5, 6], [7, 8], [9, 0]];
-    console.log(arr.reduce((a, b) => { 
-        return a.concat(b)
-    }))
 
     console.log("flatten method", flatten(arr));
  /**END OF EXCERCISE ONE */
