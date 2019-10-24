@@ -1,6 +1,6 @@
 // Generated from the Unicode 10 database and https://en.wikipedia.org/wiki/Script_(Unicode)
 
-let SCRIPTS  = [
+var SCRIPTS  = [
   {
     name: "Adlam",
     ranges: [[125184, 125259], [125264, 125274], [125278, 125280]],
@@ -1177,15 +1177,16 @@ function characterScript(code) {
         })) {
             return script;
         }
-
-        return null;
     }
+    return null;
 }
 
-function countsBy(item, groupName) {
-    let known,
-        counts = [],
-        name = groupName(item);
+function countsBy(items, groupName) {
+    let counts = [], item;
+
+    for (item of items) {
+        
+        let name = groupName(item),
     
         known = counts.findIndex(c => c.name == name);//this method checks to see if any of the element returns true based on the condition given it return -1 if otherwise
 
@@ -1194,12 +1195,22 @@ function countsBy(item, groupName) {
         } else {
             counts[known].count++;
         }
+    }
 
         return counts;
 }
 
 let string = "collins";
 
-console.log(characterScript(string));
-// countsBy(characterScript(string), )
+
+function writingDirection(script) {
+    let scripts = countsBy(script, char => {
+        let script = characterScript(char.codePointAt(0));
+            return script ? script.direction : "none";
+    })
+    
+    return scripts;
+}
+
+console.log(writingDirection(string)[0].name);
 /**END OF FUNCTION FOR WRITING DOMINANT WRITING DIRECTION */
