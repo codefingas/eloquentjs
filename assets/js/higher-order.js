@@ -1207,10 +1207,36 @@ function writingDirection(script) {
     let scripts = countsBy(script, char => {
         let script = characterScript(char.codePointAt(0));
             return script ? script.direction : "none";
-    })
+    }).filter(({name}) => name != "none");
+
+    if (scripts.length == 0)  return "ltr";//setting a default return value for 
     
-    return scripts;
+    return scripts.reduce((a, b) => { a.count > b.count ? a : b}).name;//setting the function to return the element with the highest direction
 }
 
-console.log(writingDirection(string)[0].name);
+console.log(writingDirection(string));
 /**END OF FUNCTION FOR WRITING DOMINANT WRITING DIRECTION */
+
+
+/**FUNCTION FOR EVERY METHOD */
+function every(array, predicate) {//this function loops through the array it recieves and checks if each element passes the predicate function
+    for (let element of array) {
+      if (!predicate(element)) return false;
+    }
+    return true;
+}
+
+console.log(every([1, 2, 3, 4], a => a < 10));
+/**END OF FUNCTION FOR EVERY METHOD */
+
+
+/** APPLYING THE ABOVE FUNCTION USING THE IN-BUILT EVERY FUNCTION */
+function every2(array, predicate) {
+  return !array.some(element => !predicate(element));
+  /**whatever the predicate function gets after computing, gets reverse
+   * this makes the some method return the reverse then that gets reversed too
+   * for example if the predicate function checks i 1 < 10, this will retun true and then what will get opposed
+   * this makes the some method return true by default meaning it works for some, then that get opposed too as we want for every
+   */
+}
+/**END OF APPLYING THE ABOVE FUNCTION*/
